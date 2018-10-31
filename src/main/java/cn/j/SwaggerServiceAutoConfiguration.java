@@ -16,9 +16,11 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @Author J
@@ -40,63 +42,35 @@ public class SwaggerServiceAutoConfiguration implements BeanFactoryAware {
 
     @Bean
     @ConditionalOnMissingBean(Docket.class)
-    public Docket defaultApiDoc() {
-        for (DocketInfo info : swaggerProperties.getDocket().values()) {
-            return new Docket(DocumentationType.SWAGGER_2)
+    public Integer groupApiDoc() {
+        ConfigurableBeanFactory configurableBeanFactory = (ConfigurableBeanFactory) beanFactory;
+        Set<Map.Entry<String, DocketInfo>> set = swaggerProperties.getDocket().entrySet();
+        ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
+        for (Map.Entry<String, DocketInfo> mapItem : set) {
+            String beanName = mapItem.getKey();
+            DocketInfo docketInfo = mapItem.getValue();
+            Docket docket = new Docket(DocumentationType.SWAGGER_2)
                     //接口基本信息
                     .apiInfo(
-                            new ApiInfoBuilder()
-                                    .title(info.getTitle())
-                                    .description(info.getDescription())
-                                    .version(info.getVersion())
+                            apiInfoBuilder
+                                    .title(docketInfo.getTitle())
+                                    .description(docketInfo.getDescription())
+                                    .version(docketInfo.getVersion())
                                     .build()
                     )
+                    .groupName(docketInfo.getGroupName())
                     .select()
                     //该包下的接口生成接口文档
                     //注意 扫描的包是以包名为basePackage开头的包
                     //如:配置包 xx.api 若存在xx.api2   xx.api2下的接口也会被扫描进去
-                    .apis(RequestHandlerSelectors.basePackage(info.getBasePackage()))
+                    .apis(RequestHandlerSelectors.basePackage(docketInfo.getBasePackage()))
                     .paths(PathSelectors.any())
                     .build();
+            configurableBeanFactory.registerSingleton(beanName, docket);
         }
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                //接口基本信息
-//                .apiInfo(
-//                        new ApiInfoBuilder()
-//                                .title(swaggerProperties.getTitle())
-//                                .description(swaggerProperties.getDescription())
-//                                .version(swaggerProperties.getVersion())
-//                                .build()
-//                )
-//                .select()
-//                //该包下的接口生成接口文档
-//                //注意 扫描的包是以包名为basePackage开头的包
-//                //如:配置包 xx.api 若存在xx.api2   xx.api2下的接口也会被扫描进去
-//                .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getBasePackage()))
-//                .paths(PathSelectors.any())
-//                .build();
-        return null;
-    }
-
-    public Integer groupApiDoc() {
-        ConfigurableBeanFactory configurableBeanFactory = (ConfigurableBeanFactory) beanFactory;
-
-//        configurableBeanFactory.registerSingleton();
         return 1;
     }
 
-//    private Docket createDocket() {
-//
-//    }
-
-    private ApiInfo createApiInfo(ApiInfoBuilder builder, String title, String description, String version) {
-        //todo
-        return builder
-                .title(title)
-                .description(description)
-                .version(version)
-                .build();
-    }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {

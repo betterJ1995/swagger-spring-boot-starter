@@ -10,6 +10,7 @@ public class DocketInfo {
     private String description;
     private String version;
     private String basePackage;
+    private String groupName;
 
     public String getTitle() {
         return title;
@@ -41,5 +42,13 @@ public class DocketInfo {
 
     public void setBasePackage(String basePackage) {
         this.basePackage = basePackage;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 }
