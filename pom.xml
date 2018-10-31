@@ -15,14 +15,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<spring.boot.version>2.0.6.RELEASE</spring.boot.version>
 		<swagger.version>2.9.2</swagger.version>
+		<swagger.bootstrap.ui.version>1.8.5</swagger.bootstrap.ui.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
-			<version>2.0.6.RELEASE</version>
+			<version>${spring.boot.version}</version>
 		</dependency>
 		<!-- api接口文档 -->
 		<dependency>
@@ -30,20 +32,11 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>${swagger.version}</version>
 		</dependency>
-		<!--swagger 默认的接口文档样式-->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${swagger.version}</version>
-		</dependency>
 		<!-- swagger 接口文档ui样式 -->
 		<dependency>
 			<groupId>com.github.xiaoymin</groupId>
 			<artifactId>swagger-bootstrap-ui</artifactId>
-			<version>1.8.5</version>
+			<version>${swagger.bootstrap.ui.version}</version>
 		</dependency>
 	</dependencies>
-	<!--
-	mvn install:install-file -Dfile=swagger-spring-boot-starter-0.0.1-SNAPSHOT.jar  -DgroupId=cn.j  -DartifactId=swagger-spring-boot-starter  -Dversion=0.0.1-SNAPSHOT  -Dpackaging=jar
-	-->
 </project>
