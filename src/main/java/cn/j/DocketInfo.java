@@ -6,11 +6,38 @@ package cn.j;
  * @Description
  **/
 public class DocketInfo {
-    private String title;
-    private String description;
-    private String version;
-    private String basePackage;
-    private String groupName;
+    /**
+     * 接口标题
+     */
+    private String title = "接口文档";
+    /**
+     * 接口文档描述
+     */
+    private String description = "";
+    /**
+     * 文档版本
+     */
+    private String version = "1.0";
+    /**
+     * 接口生成的基础扫描包
+     */
+    private String basePackage = "";
+    /**
+     * 分组名称
+     */
+    private String groupName = "default";
+    /**
+     * 许可证
+     **/
+    private String license = "";
+    /**
+     * 许可证URL
+     **/
+    private String licenseUrl = "";
+    /**
+     * 服务条款URL
+     **/
+    private String termsOfServiceUrl = "";
 
     public String getTitle() {
         return title;
@@ -50,5 +77,29 @@ public class DocketInfo {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public String getLicenseUrl() {
+        return licenseUrl;
+    }
+
+    public void setLicenseUrl(String licenseUrl) {
+        this.licenseUrl = licenseUrl;
+    }
+
+    public String getTermsOfServiceUrl() {
+        return termsOfServiceUrl;
+    }
+
+    public void setTermsOfServiceUrl(String termsOfServiceUrl) {
+        this.termsOfServiceUrl = termsOfServiceUrl;
     }
 }

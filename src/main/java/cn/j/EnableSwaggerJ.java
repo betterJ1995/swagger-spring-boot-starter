@@ -15,6 +15,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 @Documented
-@Import({SwaggerServiceAutoConfiguration.class})
+@Import({SwaggerAutoConfiguration.class})
 public @interface EnableSwaggerJ {
 }
