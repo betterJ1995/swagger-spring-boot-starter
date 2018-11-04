@@ -2,6 +2,7 @@
 
 swagger-spring-boot-starter
 
+
 ## 注解
 @EnableSwaggerJ
 
@@ -29,5 +30,6 @@ swagger:
     docket[1]:
       #属性与单分组相同
 ```
-
-`PS: 若同时配置了单分组与多分组，则单分组失效`
+## PS
+`1. 若同时配置了单分组与多分组，则单分组失效`  
+`2. 使用swagger-bootstrap-ui替换的原本的文档ui`
