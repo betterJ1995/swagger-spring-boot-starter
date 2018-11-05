@@ -5,7 +5,7 @@
 
     <groupId>com.github.tripleJ1995</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>swagger-spring-boot-starter</name>
@@ -15,7 +15,7 @@
         <developer>
             <name>J</name>
             <url></url>
-            <email></email>
+            <email>betterj1995@qq.com</email>
         </developer>
     </developers>
 
