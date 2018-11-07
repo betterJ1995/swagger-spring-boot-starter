@@ -3,7 +3,15 @@
 swagger-spring-boot-starter
 
 
-## 注解
+## 使用
+```
+        <dependency>
+            <groupId>com.github.jinse95</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+```
+### 注解
 @EnableSwaggerJ
 
 ## 单分组接口文档
