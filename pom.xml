@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.tripleJ1995</groupId>
+    <groupId>com.github.jinse95</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
-    <url>https://github.com/betterJ1995/swagger-spring-boot-starter</url>
+    <url>https://github.com/jinse95/swagger-spring-boot-starter</url>
 
     <name>swagger-spring-boot-starter</name>
     <description>swagger-spring-boot-starter</description>
@@ -18,15 +18,15 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:betterJ1995/swagger-spring-boot-starter.git</connection>
-        <developerConnection>scm:git:git@github.com:betterJ1995/swagger-spring-boot-starter.git</developerConnection>
-        <url>git@github.com:betterJ1995/swagger-spring-boot-starter.git</url>
+        <connection>scm:git:git@github.com:jinse95/swagger-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:jinse95/swagger-spring-boot-starter.git</developerConnection>
+        <url>git@github.com:jinse95/swagger-spring-boot-starter.git</url>
     </scm>
 
     <developers>
         <developer>
             <name>J</name>
-            <email>betterj1995@qq.com</email>
+            <email>jinse95@qq.com</email>
         </developer>
     </developers>
 
