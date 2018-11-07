@@ -5,7 +5,7 @@
 
     <groupId>com.github.jinse95</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <url>https://github.com/jinse95/swagger-spring-boot-starter</url>
 
