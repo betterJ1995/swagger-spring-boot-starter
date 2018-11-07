@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.github.jinse95</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
     <version>1.0.0</version>
@@ -70,6 +69,9 @@
     <profiles>
         <profile>
             <id>release</id>
+            <properties>
+                <gpg.executable>C:/software/GnuPG/bin/gpg.exe</gpg.executable>
+            </properties>
             <build>
                 <plugins>
                     <!-- Source -->
@@ -97,7 +99,7 @@
                             <charset>UTF-8</charset>
                             <encoding>UTF-8</encoding>
                             <docencoding>UTF-8</docencoding>
-                            <!--<additionalparam>-Xdoclint:none</additionalparam>   TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                            <additionalparam>-Xdoclint:none</additionalparam>   <!--TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
                         </configuration>
                         <executions>
                             <execution>
@@ -127,11 +129,11 @@
             <!--远端仓库配置-->
             <distributionManagement>
                 <snapshotRepository>
-                    <id>aj1995</id>
+                    <id>jinse</id>
                     <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
-                    <id>aj1995</id>
+                    <id>jinse</id>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
