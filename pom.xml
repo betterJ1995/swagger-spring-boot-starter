@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.jinse95</groupId>
     <artifactId>swagger-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <url>https://github.com/jinse95/swagger-spring-boot-starter</url>
-
     <name>swagger-spring-boot-starter</name>
     <description>swagger-spring-boot-starter</description>
+    <!--license-->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+    <!--???-->
     <scm>
         <connection>scm:git:git@github.com:jinse95/swagger-spring-boot-starter.git</connection>
         <developerConnection>scm:git:git@github.com:jinse95/swagger-spring-boot-starter.git</developerConnection>
         <url>git@github.com:jinse95/swagger-spring-boot-starter.git</url>
     </scm>
-
+    <!--开发者-->
     <developers>
         <developer>
             <name>J</name>
@@ -41,16 +43,19 @@
     </properties>
 
     <dependencies>
+        <!--添加option属性使依赖不被传递-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
             <version>${spring.boot.version}</version>
+            <optional>true</optional>
         </dependency>
         <!--编译之后生成元数据json 编写property/yml 文件自动提示-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <version>${spring.boot.version}</version>
+            <optional>true</optional>
         </dependency>
         <!-- api接口文档 -->
         <dependency>
@@ -68,13 +73,13 @@
 
     <profiles>
         <profile>
-            <id>release</id>
+            <id>deployCenter</id>
             <properties>
                 <gpg.executable>C:/software/GnuPG/bin/gpg.exe</gpg.executable>
             </properties>
             <build>
                 <plugins>
-                    <!-- Source -->
+                    <!-- 生成 Source.jar -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -88,7 +93,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- Javadoc -->
+                    <!-- 生成 Javadoc.jar -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -99,7 +104,8 @@
                             <charset>UTF-8</charset>
                             <encoding>UTF-8</encoding>
                             <docencoding>UTF-8</docencoding>
-                            <additionalparam>-Xdoclint:none</additionalparam>   <!--TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                            <!--TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                            <additionalparam>-Xdoclint:none</additionalparam>
                         </configuration>
                         <executions>
                             <execution>
