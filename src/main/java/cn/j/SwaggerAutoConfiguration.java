@@ -23,8 +23,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import java.util.List;
 
 /**
- * @Author J
- * @Date 2018/10/30 16:43
+ * @author J
  **/
 @Configuration
 @ConditionalOnClass(Docket.class)

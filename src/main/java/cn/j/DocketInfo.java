@@ -3,9 +3,7 @@ package cn.j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Author J
- * @Date 2018/10/31 20:20
- * @Description
+ * @author J
  **/
 @ConfigurationProperties(prefix = "swagger.j.single")
 public class DocketInfo {

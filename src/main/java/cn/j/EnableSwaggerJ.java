@@ -8,7 +8,9 @@ import java.lang.annotation.*;
 
 /**
  * 开启注解
- * Created by J on 2018/10/31.
+ * created on 2018/10/31.
+ *
+ * @author J
  */
 @EnableSwagger2
 @EnableSwaggerBootstrapUI

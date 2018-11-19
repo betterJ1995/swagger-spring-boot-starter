@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author J
- * @Date 2018/10/30 16:41
- * @Description
+ * @author J
  **/
 @ConfigurationProperties(prefix = "swagger.j")
 public class SwaggerProperties {
