@@ -16,7 +16,7 @@ public class SwaggerProperties {
     /**
      * 当个分组的docket对象
      */
-    private static DocketInfo single = new DocketInfo();
+    private DocketInfo single = new DocketInfo();
 
     /**
      * 多个分组的docket列表，使用下标[0],[1]配置
